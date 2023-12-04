@@ -15,5 +15,4 @@ myPromise.then(function(result) {
   console.log(`Failure: ${result}`)
 }).finally(function() {
   console.log('Complete');
-})
-
+});
