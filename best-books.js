@@ -36,9 +36,9 @@ formEl.addEventListener('submit', function(e) {
     })
     .then(function(responseJson) {
       let bestBooks = responseJson.results.books;
-      // console.log(bestBooks);
-      // console.log(bestBooks.length);
       for (let x = 0; x < 5; x++) {
+        document.getElementById(`img-src${x}`).setAttribute('src', bestBooks[x].book_image);
+        document.getElementById(`img-src${x}`).setAttribute('alt', bestBooks[x].title);
         document.querySelector(`#book${x}`).innerText += `Title - ${bestBooks[x].title}\n`;
         document.querySelector(`#book${x}`).innerText += `Author - ${bestBooks[x].author}\n`;
         document.querySelector(`#book${x}`).innerText += `Description - ${bestBooks[x].description}\n`;
